@@ -10,96 +10,96 @@
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>ec8b5404-a143-45c8-924c-b7e08cd9c6d9</PackageIdentityName>
     <PackageIdentityPublisher>CN=lavin</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\obj\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Bin\Debug\PhoneApp1.dll">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Bin\Debug\PhoneApp1.dll">
       <PackagePath>PhoneApp1.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\packages\WindowsAzure.Messaging.Managed.0.1.7.9\lib\windowsphone8\Microsoft.WindowsAzure.Messaging.dll">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\packages\WindowsAzure.Messaging.Managed.0.1.7.9\lib\windowsphone8\Microsoft.WindowsAzure.Messaging.dll">
       <PackagePath>Microsoft.WindowsAzure.Messaging.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.dll">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.dll">
       <PackagePath>System.Net.Http.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll">
       <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll">
       <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.xml">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.xml">
       <PackagePath>Newtonsoft.Json.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.xml">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.xml">
       <PackagePath>System.Net.Http.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Extensions.xml">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Extensions.xml">
       <PackagePath>System.Net.Http.Extensions.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Primitives.xml">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Primitives.xml">
       <PackagePath>System.Net.Http.Primitives.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\AlignmentGrid.png">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Assets\AlignmentGrid.png">
       <PackagePath>Assets\AlignmentGrid.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\ApplicationIcon.png">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Assets\ApplicationIcon.png">
       <PackagePath>Assets\ApplicationIcon.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\BadgeLogo.png">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Assets\BadgeLogo.png">
       <PackagePath>Assets\BadgeLogo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\Logo.png">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\SplashScreen.png">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Assets\SplashScreen.png">
       <PackagePath>Assets\SplashScreen.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\SquareTile150x150.png">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Assets\SquareTile150x150.png">
       <PackagePath>Assets\SquareTile150x150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\SquareTile71x71.png">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Assets\SquareTile71x71.png">
       <PackagePath>Assets\SquareTile71x71.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\WideLogo.png">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Assets\WideLogo.png">
       <PackagePath>Assets\WideLogo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\Tiles\FlipCycleTileLarge.png">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Assets\Tiles\FlipCycleTileLarge.png">
       <PackagePath>Assets\Tiles\FlipCycleTileLarge.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\Tiles\FlipCycleTileMedium.png">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Assets\Tiles\FlipCycleTileMedium.png">
       <PackagePath>Assets\Tiles\FlipCycleTileMedium.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\Tiles\FlipCycleTileSmall.png">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Assets\Tiles\FlipCycleTileSmall.png">
       <PackagePath>Assets\Tiles\FlipCycleTileSmall.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\Tiles\IconicTileMediumLarge.png">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Assets\Tiles\IconicTileMediumLarge.png">
       <PackagePath>Assets\Tiles\IconicTileMediumLarge.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\Tiles\IconicTileSmall.png">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Assets\Tiles\IconicTileSmall.png">
       <PackagePath>Assets\Tiles\IconicTileSmall.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\Bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
