@@ -1,0 +1,31 @@
+﻿<xapCache source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Bin\Debug\PhoneApp1_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="24/01/2017 16:15:10">
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="24/01/2017 16:15:09" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\obj\Debug\PhoneApp1.dll" archivePath="PhoneApp1.dll" lastWriteTime="24/01/2017 16:15:08" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="22/12/2016 16:38:56" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\BadgeLogo.png" archivePath="Assets\BadgeLogo.png" lastWriteTime="22/12/2016 16:38:56" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\Logo.png" archivePath="Assets\Logo.png" lastWriteTime="22/12/2016 16:38:56" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\SplashScreen.png" archivePath="Assets\SplashScreen.png" lastWriteTime="22/12/2016 16:38:56" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\SquareTile150x150.png" archivePath="Assets\SquareTile150x150.png" lastWriteTime="22/12/2016 16:38:56" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\SquareTile71x71.png" archivePath="Assets\SquareTile71x71.png" lastWriteTime="22/12/2016 16:38:56" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\StoreLogo.png" archivePath="Assets\StoreLogo.png" lastWriteTime="22/12/2016 16:38:56" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\WideLogo.png" archivePath="Assets\WideLogo.png" lastWriteTime="22/12/2016 16:38:56" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="22/12/2016 16:38:56" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="22/12/2016 16:38:56" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="22/12/2016 16:38:56" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="22/12/2016 16:38:56" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="22/01/2017 19:23:36" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="22/12/2016 16:38:56" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="22/12/2016 16:38:56" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\packages\WindowsAzure.Messaging.Managed.0.1.7.9\lib\windowsphone8\Microsoft.WindowsAzure.Messaging.dll" archivePath="Microsoft.WindowsAzure.Messaging.dll" lastWriteTime="30/07/2014 12:12:22" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="13/06/2016 23:06:14" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.dll" archivePath="System.Net.Http.dll" lastWriteTime="03/07/2016 11:47:12" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll" archivePath="System.Net.Http.Extensions.dll" lastWriteTime="03/07/2016 11:47:12" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll" archivePath="System.Net.Http.Primitives.dll" lastWriteTime="03/07/2016 11:47:12" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.xml" archivePath="Newtonsoft.Json.xml" lastWriteTime="13/06/2016 23:06:14" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.xml" archivePath="System.Net.Http.xml" lastWriteTime="03/07/2016 11:47:12" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Extensions.xml" archivePath="System.Net.Http.Extensions.xml" lastWriteTime="03/07/2016 11:47:12" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Primitives.xml" archivePath="System.Net.Http.Primitives.xml" lastWriteTime="03/07/2016 11:47:12" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="22/12/2016 17:00:25" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="24/01/2017 16:15:10" />
+  <file source="C:\Users\lavin\Source\Repos\PhoneApp1\PhoneApp1\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="23/01/2017 00:09:16" />
+</xapCache>

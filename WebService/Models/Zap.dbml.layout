@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Zap">
+  <DataContextMoniker Name="/ZapDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b0f1f816-f21f-41cd-bf94-197001dd67a8" absoluteBounds="1.25, 1.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ZapDataContext/Grupo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="57b6aa91-637c-44d1-8db3-7d48e6c5c2a9" absoluteBounds="1.2650000000000001, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f82784d1-f270-4a2e-bd48-0ff8d8898e18" absoluteBounds="4.625, 1.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/ZapDataContext/GrupoUsuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8cb11ef8-128a-4d23-896c-d176bbe70ea1" absoluteBounds="4.64, 1.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.25 : 2.00564697265625); (4.625 : 2.00564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ZapDataContext/Grupo/Grupo_GrupoUsuario" />
+      <nodes>
+        <classShapeMoniker Id="b0f1f816-f21f-41cd-bf94-197001dd67a8" />
+        <classShapeMoniker Id="f82784d1-f270-4a2e-bd48-0ff8d8898e18" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c7758125-4955-4674-b1f0-501256b95637" absoluteBounds="2, 3.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ZapDataContext/Usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73b5c757-524e-4246-bf46-fc81e2ffdbfd" absoluteBounds="2.015, 3.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.625 : 3.25); (2.625 : 2.5112939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ZapDataContext/Usuario/Usuario_Grupo" />
+      <nodes>
+        <classShapeMoniker Id="c7758125-4955-4674-b1f0-501256b95637" />
+        <classShapeMoniker Id="b0f1f816-f21f-41cd-bf94-197001dd67a8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4 : 3.25); (4.625 : 2.69399251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ZapDataContext/Usuario/Usuario_GrupoUsuario" />
+      <nodes>
+        <classShapeMoniker Id="c7758125-4955-4674-b1f0-501256b95637" />
+        <classShapeMoniker Id="f82784d1-f270-4a2e-bd48-0ff8d8898e18" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

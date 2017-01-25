@@ -1,0 +1,142 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PhoneApp1.Zap"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <phone:Pivot x:Name="pivotZap" Title="Zazap">
+            <phone:PivotItem  Header="Not" Margin="14,0,10,0">
+                <Grid>
+                    <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top" Click="button_Click"/>
+                </Grid>
+            </phone:PivotItem>
+            
+            <phone:PivotItem  Header="Contatos" Margin="14,0,10,0">
+                <Grid>
+                    <ListBox x:Name="ListContatos" Margin="0,10">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image Source="{Binding Photo}"/>
+                                    <TextBlock FontSize="30" Text="{Binding Nome}" >
+                                    </TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem  Header="Grupos" Margin="14,0,10,0">
+                <Grid>
+                    <phone:LongListSelector x:Name="ListGrupos" Margin="0,10">
+                        <phone:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image Source="{Binding Descricao}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+                    </phone:LongListSelector>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="Chat" Margin="14,0,10,0">
+                <Grid>
+                    <ListBox x:Name="ListUsersSend" Margin="0,10,0,98">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image Source="{Binding Photo}"/>
+                                    <TextBlock FontSize="30" Text="{Binding Nome}" >
+                                    </TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBox x:Name="txtMsg" HorizontalAlignment="Left" Margin="7,539,0,0" TextWrapping="Wrap" Text="Mensagem" VerticalAlignment="Top" Width="322"/>
+                    <Button x:Name="btnEnviarMsg" Content="Enviar" HorizontalAlignment="Left" Margin="329,538,0,0" VerticalAlignment="Top" Width="117" Click="btnEnviarMsg_Click"/>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem  Header="Novo Contato" Margin="14,0,10,0">
+                <Grid>
+                    <TextBox x:Name="txtNome" HorizontalAlignment="Left" Margin="0,33,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top" Width="446"/>
+                    <Button x:Name="btnInserirContato" Content="Inserir" HorizontalAlignment="Left" Margin="10,441,0,0" VerticalAlignment="Top" Width="436" Click="btnInserirContato_Click"/>
+                    <TextBlock x:Name="textBlockFT" HorizontalAlignment="Left" Margin="17,123,0,0" TextWrapping="Wrap" Text="Foto:" VerticalAlignment="Top" FontSize="28"/>
+                    <Image x:Name="imgSelectedImage" HorizontalAlignment="Left" Height="263" Margin="166,134,0,0" VerticalAlignment="Top" Width="263"/>
+                    <Button x:Name="btnPicture" Content="Selecionar" HorizontalAlignment="Left" Margin="17,325,0,0" VerticalAlignment="Top" Tap="OnChoosePicture"/>
+
+
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem  Header="Novo Grupo" Margin="14,0,10,0">
+                <Grid>
+                    <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Margin="0,33,0,0" TextWrapping="Wrap" Text="Descrição" VerticalAlignment="Top" Width="446"/>
+                    <ListBox x:Name="ListSelectUsers" Margin="0,110,0,94" SelectionMode="Multiple">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image Source="{Binding Photo}"/>
+                                    <TextBlock FontSize="30" Text="{Binding Nome}" >
+                                    </TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Button x:Name="btnInserirGrupo" Content="Inserir" HorizontalAlignment="Left" Margin="10,542,0,0" VerticalAlignment="Top" Width="436" Click="btnInserirGrupo_Click"/>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem  Header="Editar Contato" Margin="14,0,10,0">
+                <Grid>
+                    <ListBox x:Name="ListSelectUsersEdit" Margin="0,182,0,94">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image Source="{Binding Photo}"/>
+                                    <TextBlock FontSize="30" Text="{Binding Nome}" >
+                                    </TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBox x:Name="txtNomeEdit" HorizontalAlignment="Left" Margin="0,33,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top" Width="446"/>
+                    <TextBox x:Name="txtFotoEdit" HorizontalAlignment="Left" Margin="0,105,0,0" TextWrapping="Wrap" Text="Foto" VerticalAlignment="Top" Width="439"/>
+                    <Button x:Name="btnEditContato" Content="Editar" HorizontalAlignment="Left" Margin="10,542,0,0" VerticalAlignment="Top" Width="216" Click="btnEditContato_Click"/>
+                    <Button x:Name="btnDelContato" Content="Deletar" HorizontalAlignment="Left" Margin="223,543,0,0" VerticalAlignment="Top" Width="216" Click="btnDelContato_Click"/>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem  Header="Editar Grupo" Margin="14,0,10,0">
+                <Grid>
+                    <phone:LongListSelector x:Name="ListSelectGPEdit" Margin="0,110,0,94">
+                        <phone:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image Source="{Binding Descricao}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+                    </phone:LongListSelector>
+                    <TextBox x:Name="txtDescEdit" HorizontalAlignment="Left" Margin="0,33,0,0" TextWrapping="Wrap" Text="Descrição" VerticalAlignment="Top" Width="446"/>
+                    <Button x:Name="btnEditGP" Content="Editar" HorizontalAlignment="Left" Margin="10,542,0,0" VerticalAlignment="Top" Width="216" Click="btnEditGP_Click"/>
+                    <Button x:Name="btnDelGP" Content="Deletar" HorizontalAlignment="Left" Margin="223,543,0,0" VerticalAlignment="Top" Width="216" Click="btnDelGP_Click"/>
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+    </Grid>
+
+</phone:PhoneApplicationPage>

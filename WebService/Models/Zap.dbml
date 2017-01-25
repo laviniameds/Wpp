@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Wpp" Class="ZapDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAVINIA-PC\SQLEXPRESS;Initial Catalog=Wpp;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="WppConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Grupo" Member="Grupos">
+    <Type Name="Grupo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IdAdm" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Grupo_GrupoUsuario" Member="GrupoUsuarios" AccessModifier="Internal" ThisKey="Id" OtherKey="IdGrupo" Type="GrupoUsuario" />
+      <Association Name="Usuario_Grupo" Member="Usuario" AccessModifier="Internal" ThisKey="IdAdm" OtherKey="Id" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GrupoUsuario" Member="GrupoUsuarios">
+    <Type Name="GrupoUsuario">
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdGrupo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Grupo_GrupoUsuario" Member="Grupo" AccessModifier="Internal" ThisKey="IdGrupo" OtherKey="Id" Type="Grupo" IsForeignKey="true" />
+      <Association Name="Usuario_GrupoUsuario" Member="Usuario" AccessModifier="Internal" ThisKey="IdUsuario" OtherKey="Id" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuario" Member="Usuarios">
+    <Type Name="Usuario">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Uri" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Usuario_Grupo" Member="Grupos" AccessModifier="Internal" ThisKey="Id" OtherKey="IdAdm" Type="Grupo" />
+      <Association Name="Usuario_GrupoUsuario" Member="GrupoUsuarios" AccessModifier="Internal" ThisKey="Id" OtherKey="IdUsuario" Type="GrupoUsuario" />
+    </Type>
+  </Table>
+</Database>
