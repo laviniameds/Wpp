@@ -153,19 +153,23 @@ namespace PhoneApp1
                 MessageBox.Show("Usuário não selecionado");
                 return;
             }
+            try
+            {
+                string name = (ListUsersSend.SelectedItem as Models.Usuario).Nome;
                 // Mensagem: toast notification
                 string msg =
                 "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
                 "<wp:Notification xmlns:wp=\"WPNotification\">" +
                     "<wp:Toast>" +
-                        "<wp:Text1>" + txtMsg.Text + "</wp:Text1>" +
-                        "<wp:Param>/Notification.xaml?Msg1="
-                            + txtMsg.Text + "</wp:Param>" +
+                        "<wp:Text1>" + name + "</wp:Text1>" +
+                        "<wp:Text2>" + txtMsg.Text + "</wp:Text2>" +
+                        "<wp:Param>/MsgPage.xaml?Msg1="
+                            + name + "&amp;Msg2=" + txtMsg.Text + "</wp:Param>" +
                     "</wp:Toast>" +
                 "</wp:Notification>";
 
                 // Codifica a mensagem a ser enviada
-                byte[] msgBytes = Encoding.UTF8.GetBytes(msg);
+                byte[] msgBytes = Encoding.Default.GetBytes(msg);
 
                 // Cria a requisição web com a notificação para a o usuário selecionado
                 string uri = (ListUsersSend.SelectedItem as Models.Usuario).Uri;
@@ -178,7 +182,7 @@ namespace PhoneApp1
                 request.Headers["X-NotificationClass"] = "2";
 
                 // Envia a requisição web 
-                using (Stream requestStream = await request.GetRequestStreamAsync())
+                using (Stream requestStream = request.GetRequestStream())
                 {
                     requestStream.Write(msgBytes, 0, msgBytes.Length);
                 }
@@ -191,15 +195,18 @@ namespace PhoneApp1
                 Models.Mensagem m = new Models.Mensagem
                 {
                     Uri = (ListUsersSend.SelectedItem as Models.Usuario).Uri,
-                    Texto1 = txtMsg.Text,
+                    Texto1 = name,
+                    Texto2 = txtMsg.Text,
                     Param = "Notification.xaml"
                 };
                 string s = "=" + JsonConvert.SerializeObject(m);
-                var content = new StringContent(s, Encoding.UTF8,
-                    "application/x-www-form-urlencoded");
-                await httpClient.PostAsync("/api/mensagem", content);
-
-            MessageBox.Show("Mensagem enviada!");
+                var content = new StringContent(s, Encoding.UTF8, "application/x-www-form-urlencoded");
+                await httpClient.PostAsync("/api/Mensagem", content);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private async void btnInserirContato_Click(object sender, RoutedEventArgs e)

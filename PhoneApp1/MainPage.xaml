@@ -20,7 +20,8 @@
                 <Grid>
                     <TextBox x:Name="txtNome" HorizontalAlignment="Left" Margin="0,33,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top" Width="446"/>
                     <Button x:Name="btnLogin" Content="Entrar" HorizontalAlignment="Left" Margin="10,143,0,0" VerticalAlignment="Top" Width="436" Click="btnLogin_Click"/>
-                 </Grid>
+                    <ListBox x:Name="listMsg" Margin="0,220,0,10" />
+                </Grid>
             </phone:PivotItem>
         </phone:Pivot>
     </Grid>

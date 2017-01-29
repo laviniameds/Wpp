@@ -131,6 +131,8 @@ namespace PhoneApp1
             {
                 // Mensagem apresentada ao usuário
                 MessageBox.Show(msg.ToString());
+                // Atualiza lista de mensagens
+                listMsg.Items.Add(e.Collection["wp:Text1"] + ": " + e.Collection["wp:Text2"]);
             });
         }
 
