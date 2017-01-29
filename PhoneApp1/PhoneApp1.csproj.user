@@ -2,11 +2,7 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <CurrentDeployCmdId>256</CurrentDeployCmdId>
-    <CurrentDeployID>751E7896-2025-4057-8A22-16B95DEC6AFF</CurrentDeployID>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <CurrentDeployCmdId>256</CurrentDeployCmdId>
-    <CurrentDeployID>751E7896-2025-4057-8A22-16B95DEC6AFF</CurrentDeployID>
+    <CurrentDeployID>BC33F59A-75C2-482D-A3EB-5B80CD5F0DDE</CurrentDeployID>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

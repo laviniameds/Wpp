@@ -169,7 +169,7 @@ namespace PhoneApp1
                 "</wp:Notification>";
 
                 // Codifica a mensagem a ser enviada
-                byte[] msgBytes = Encoding.Default.GetBytes(msg);
+                byte[] msgBytes = Encoding.UTF8.GetBytes(msg);
 
                 // Cria a requisição web com a notificação para a o usuário selecionado
                 string uri = (ListUsersSend.SelectedItem as Models.Usuario).Uri;
@@ -182,7 +182,7 @@ namespace PhoneApp1
                 request.Headers["X-NotificationClass"] = "2";
 
                 // Envia a requisição web 
-                using (Stream requestStream = request.GetRequestStream())
+                using (Stream requestStream = await request.GetRequestStreamAsync())
                 {
                     requestStream.Write(msgBytes, 0, msgBytes.Length);
                 }
