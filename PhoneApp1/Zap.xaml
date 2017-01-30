@@ -16,11 +16,11 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <phone:Pivot x:Name="pivotZap" Title="Zazap">
-            <phone:PivotItem x:Name="not"  Header="Notificações" Margin="14,0,10,0">
+            <!--<phone:PivotItem x:Name="not"  Header="Notificações" Margin="14,0,10,0">
                 <Grid>
                     <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top" Click="button_Click"/>
                 </Grid>
-            </phone:PivotItem>
+            </phone:PivotItem>-->
             
             <phone:PivotItem  Header="Contatos" Margin="14,0,10,0">
                 <Grid>
@@ -44,7 +44,8 @@
                         <phone:LongListSelector.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
-                                    <Image Source="{Binding Descricao}"/>
+                                    <TextBlock FontSize="30" Text="{Binding Descricao}" FontWeight="Bold" />
+                                    <TextBlock x:Name="txtNomeAdm" FontSize="20" Text="" FontFamily="Portable User Interface" />
                                 </StackPanel>
                             </DataTemplate>
                         </phone:LongListSelector.ItemTemplate>
@@ -84,7 +85,7 @@
 
             <phone:PivotItem  Header="Novo Grupo" Margin="14,0,10,0">
                 <Grid>
-                    <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Margin="0,33,0,0" TextWrapping="Wrap" Text="Descrição" VerticalAlignment="Top" Width="446"/>
+                    <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Margin="0,33,0,0" TextWrapping="Wrap" Text="Descrição" VerticalAlignment="Top" Width="446" FontFamily="Portable User Interface"/>
                     <ListBox x:Name="ListSelectUsers" Margin="0,110,0,94" SelectionMode="Multiple">
                         <ListBox.ItemTemplate>
                             <DataTemplate>

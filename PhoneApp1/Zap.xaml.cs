@@ -42,7 +42,7 @@ namespace PhoneApp1
             u = new Models.Usuario();
             u = obj.Find(x => x.Nome == nomeU);
             ExibirConversas();
-            //ExibiGrupos();
+            ExibiGrupos();
         }
 
         // Image stream variables
@@ -126,12 +126,15 @@ namespace PhoneApp1
             httpClient.BaseAddress = new Uri(ip);
             var response = await httpClient.GetAsync("/api/Usuario/");
             var str = response.Content.ReadAsStringAsync().Result;
-            List<Models.Usuario> obj = JsonConvert.DeserializeObject<List<Models.Usuario>>(str);
-            List<Models.Usuario> lf = new List<Models.Usuario>();
-            foreach (Models.Usuario k in obj) if (k.Nome != u.Nome) lf.Add(k);
-            ListContatos.ItemsSource = lf;
-            ListSelectUsers.ItemsSource = lf;
-            ListUsersSend.ItemsSource = lf;
+            if (str != "[]")
+            {
+                List<Models.Usuario> obj = JsonConvert.DeserializeObject<List<Models.Usuario>>(str);
+                List<Models.Usuario> lf = new List<Models.Usuario>();
+                foreach (Models.Usuario k in obj) if (k.Nome != u.Nome) lf.Add(k);
+                ListContatos.ItemsSource = lf;
+                ListSelectUsers.ItemsSource = lf;
+                ListUsersSend.ItemsSource = lf;
+            }
         }
 
         private async void ExibiGrupos()
@@ -140,10 +143,35 @@ namespace PhoneApp1
             httpClient.BaseAddress = new Uri(ip);
             var response = await httpClient.GetAsync("/api/Grupo/");
             var str = response.Content.ReadAsStringAsync().Result;
-            List<Models.Grupo> obj = JsonConvert.DeserializeObject<List<Models.Grupo>>(str);
-            ListGrupos.ItemsSource = obj;
-            ListSelectGPEdit.ItemsSource = obj;
+            var response1 = await httpClient.GetAsync("/api/GrupoUsuario/" + u.Id.ToString());
+            var str1 = response.Content.ReadAsStringAsync().Result;
+
+            if (str != "[]" && str1 != "[]")
+            {
+                List<Models.Grupo> obj = JsonConvert.DeserializeObject<List<Models.Grupo>>(str);
+                List<Models.GrupoUsuario> obj1 = JsonConvert.DeserializeObject<List<Models.GrupoUsuario>>(str1);
+                List<Models.Grupo> lf = new List<Models.Grupo>();
+                foreach (Models.GrupoUsuario k in obj1)
+                    foreach (Models.Grupo x in obj)
+                        if (x.Id == k.IdGrupo)
+                        {
+                            lf.Add(x);
+                            txtNomeAdm.Text
+                        }
+                ListGrupos.ItemsSource = lf;
+                ListSelectGPEdit.ItemsSource = lf;
+            }
         }
+
+        /*private async void ExibirGPUsuario()
+        {
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(ip);
+            var response = await httpClient.GetAsync("/api/GrupoUsuario/");
+            var str = response.Content.ReadAsStringAsync().Result;
+            List<Models.GrupoUsuario> obj = JsonConvert.DeserializeObject<List<Models.GrupoUsuario>>(str);
+            
+        }*/
 
         private async void btnEnviarMsg_Click(object sender, RoutedEventArgs e)
         {
@@ -254,6 +282,25 @@ namespace PhoneApp1
             string s = "=" + JsonConvert.SerializeObject(gl);
             var content = new StringContent(s, Encoding.UTF8, "application/x-www-form-urlencoded");
             await httpClient.PostAsync("/api/Grupo/", content);
+
+            var response = await httpClient.GetAsync("/api/Grupo/");
+            var str = response.Content.ReadAsStringAsync().Result;
+            List<Models.Grupo> obj = JsonConvert.DeserializeObject<List<Models.Grupo>>(str);
+            Models.Grupo grupo = obj.LastOrDefault();
+
+            List<Models.GrupoUsuario> gul = new List<Models.GrupoUsuario>();
+            foreach (Models.Usuario k in ListSelectUsers.SelectedItems)
+            {
+                Models.GrupoUsuario gu = new Models.GrupoUsuario
+                {
+                    IdUsuario = k.Id,
+                    IdGrupo = grupo.Id
+                };
+                gul.Add(gu);
+            }
+            string s1 = "=" + JsonConvert.SerializeObject(gul);
+            var content1 = new StringContent(s1, Encoding.UTF8, "application/x-www-form-urlencoded");
+            await httpClient.PostAsync("/api/GrupoUsuario/", content1);
             MessageBox.Show("Inserido com sucesso!");
             ExibiGrupos();
         }
@@ -311,11 +358,6 @@ namespace PhoneApp1
             await httpClient.DeleteAsync("/api/Usuario/" + obj.Id.ToString());
             MessageBox.Show("Deletado com sucesso!");
             ExibiGrupos();
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Uri("/Notification.xaml", UriKind.Relative));
         }
     }
 }

@@ -14,7 +14,8 @@ namespace WebService.Controllers
         public IEnumerable<Models.Grupo> Get()
         {
             Models.ZapDataContext dc = new Models.ZapDataContext();
-            var r = from u in dc.Grupos select u;
+            var r = from g in dc.Grupos
+                    select g;
             return r.ToList();
         }
 
