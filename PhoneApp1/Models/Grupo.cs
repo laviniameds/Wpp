@@ -11,5 +11,6 @@ namespace PhoneApp1.Models
         public int Id { get; set; }
         public string Descricao { get; set; }
         public int IdAdm { get; set; }
+        public Usuario Usr { get; set; }
     }
 }

@@ -40,16 +40,16 @@
 
             <phone:PivotItem  Header="Grupos" Margin="14,0,10,0">
                 <Grid>
-                    <phone:LongListSelector x:Name="ListGrupos" Margin="0,10">
-                        <phone:LongListSelector.ItemTemplate>
+                    <ListBox x:Name="ListGrupos" Margin="0,10">
+                        <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
                                     <TextBlock FontSize="30" Text="{Binding Descricao}" FontWeight="Bold" />
-                                    <TextBlock x:Name="txtNomeAdm" FontSize="20" Text="" FontFamily="Portable User Interface" />
+                                    <TextBlock FontSize="20" Text="{Binding Usr.Nome}" FontFamily="Portable User Interface"/>
                                 </StackPanel>
                             </DataTemplate>
-                        </phone:LongListSelector.ItemTemplate>
-                    </phone:LongListSelector>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </Grid>
             </phone:PivotItem>
 

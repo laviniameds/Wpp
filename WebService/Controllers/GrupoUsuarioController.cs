@@ -11,11 +11,10 @@ namespace WebService.Controllers
     public class GrupoUsuarioController : ApiController
     {
         // GET api/grupoUsuario
-        public IEnumerable<Models.GrupoUsuario> Get(int IdU)
+        public IEnumerable<Models.GrupoUsuario> Get()
         {
             Models.ZapDataContext dc = new Models.ZapDataContext();
             var r = from u in dc.GrupoUsuarios
-                    where u.IdUsuario == IdU
                     select u;
             return r.ToList();
         }

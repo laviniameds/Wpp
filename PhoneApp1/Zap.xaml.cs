@@ -144,34 +144,27 @@ namespace PhoneApp1
             var response = await httpClient.GetAsync("/api/Grupo/");
             var str = response.Content.ReadAsStringAsync().Result;
             var response1 = await httpClient.GetAsync("/api/GrupoUsuario/" + u.Id.ToString());
-            var str1 = response.Content.ReadAsStringAsync().Result;
+            var str1 = response1.Content.ReadAsStringAsync().Result;
+            var response2 = await httpClient.GetAsync("/api/Usuario/");
+            var str2 = response2.Content.ReadAsStringAsync().Result;
 
             if (str != "[]" && str1 != "[]")
             {
                 List<Models.Grupo> obj = JsonConvert.DeserializeObject<List<Models.Grupo>>(str);
                 List<Models.GrupoUsuario> obj1 = JsonConvert.DeserializeObject<List<Models.GrupoUsuario>>(str1);
+                List<Models.Usuario> obj2 = JsonConvert.DeserializeObject<List<Models.Usuario>>(str2);
                 List<Models.Grupo> lf = new List<Models.Grupo>();
                 foreach (Models.GrupoUsuario k in obj1)
                     foreach (Models.Grupo x in obj)
-                        if (x.Id == k.IdGrupo)
+                        if (x.Id == k.IdGrupo && k.IdUsuario == u.Id)
                         {
+                            x.Usr = obj2.Find(w => w.Id == x.IdAdm);
                             lf.Add(x);
-                            txtNomeAdm.Text
                         }
                 ListGrupos.ItemsSource = lf;
                 ListSelectGPEdit.ItemsSource = lf;
             }
         }
-
-        /*private async void ExibirGPUsuario()
-        {
-            HttpClient httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri(ip);
-            var response = await httpClient.GetAsync("/api/GrupoUsuario/");
-            var str = response.Content.ReadAsStringAsync().Result;
-            List<Models.GrupoUsuario> obj = JsonConvert.DeserializeObject<List<Models.GrupoUsuario>>(str);
-            
-        }*/
 
         private async void btnEnviarMsg_Click(object sender, RoutedEventArgs e)
         {
@@ -275,7 +268,8 @@ namespace PhoneApp1
             Models.Grupo g = new Models.Grupo
             {
                 Descricao = txtDescricao.Text,
-                IdAdm = u.Id
+                IdAdm = u.Id,
+                Usr = u
             };
             List<Models.Grupo> gl = new List<Models.Grupo>();
             gl.Add(g);

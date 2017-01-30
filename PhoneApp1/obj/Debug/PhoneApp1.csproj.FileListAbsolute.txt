@@ -106,3 +106,11 @@ C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\obj\Debug\MultipleQualifiersPerDimensi
 C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\obj\Debug\ProjectArchitectures.txt
 C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\obj\Debug\MDILProjectFiles.xml
 C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\obj\Debug\XapCacheFile.xml
+C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\obj\Debug\System.Net.Http\layout.resfiles
+C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\obj\Debug\System.Net.Http\layout.resfiles.intermediate
+C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\obj\Debug\System.Net.Http\Resources.resfiles
+C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\obj\Debug\System.Net.Http\Resources.resfiles.intermediate
+C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\obj\Debug\System.Net.Http\pri.resfiles
+C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\obj\Debug\System.Net.Http\pri.resfiles.intermediate
+C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\obj\Debug\System.Net.Http\priconfig.xml
+C:\Users\lavin\Source\Repos\Wpp\PhoneApp1\obj\Debug\System.Net.Http\priconfig.xml.intermediate
