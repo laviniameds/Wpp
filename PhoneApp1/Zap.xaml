@@ -44,7 +44,7 @@
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
-                                    <TextBlock FontSize="30" Text="{Binding Descricao}" FontWeight="Bold" />
+                                    <TextBlock FontSize="30" Text="{Binding Descricao}" FontWeight="Bold" DoubleTap="TextBlock_DoubleTap" />
                                     <TextBlock FontSize="20" Text="{Binding Usr.Nome}" FontFamily="Portable User Interface"/>
                                 </StackPanel>
                             </DataTemplate>
@@ -53,9 +53,24 @@
                 </Grid>
             </phone:PivotItem>
 
-            <phone:PivotItem Header="Chat" Margin="14,0,10,0">
+            <phone:PivotItem  Header="Detalhes Grupo" Margin="14,0,10,0">
                 <Grid>
-                    <ListBox x:Name="ListUsersSend" Margin="0,10,0,98">
+                    <ListBox x:Name="ListDetalhesGrupo" Margin="0,48,0,10">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock FontSize="20" Text="{Binding Descricao}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBlock x:Name="tbNomeGP" HorizontalAlignment="Left" Margin="16,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="Mensagem Contato" Margin="14,0,10,0">
+                <Grid>
+                    <ListBox x:Name="ListUsersSend" Margin="0,10,0,92">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
@@ -68,6 +83,22 @@
                     </ListBox>
                     <TextBox x:Name="txtMsg" HorizontalAlignment="Left" Margin="7,539,0,0" TextWrapping="Wrap" Text="Mensagem" VerticalAlignment="Top" Width="322"/>
                     <Button x:Name="btnEnviarMsg" Content="Enviar" HorizontalAlignment="Left" Margin="329,538,0,0" VerticalAlignment="Top" Width="117" Click="btnEnviarMsg_Click"/>
+                </Grid>
+            </phone:PivotItem>
+            
+            <phone:PivotItem Header="Mensagem Grupo" Margin="14,0,10,0">
+                <Grid>
+                    <ListBox x:Name="ListGPSend" Margin="0,10,0,92">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock FontSize="30" Text="{Binding Descricao}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBox x:Name="txtMsgGP" HorizontalAlignment="Left" Margin="7,539,0,0" TextWrapping="Wrap" Text="Mensagem" VerticalAlignment="Top" Width="322"/>
+                    <Button x:Name="btnEnviarMsgGP" Content="Enviar" HorizontalAlignment="Left" Margin="329,538,0,0" VerticalAlignment="Top" Width="117" Click="btnEnviarMsgGP_Click"/>
                 </Grid>
             </phone:PivotItem>
 

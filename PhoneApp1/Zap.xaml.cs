@@ -24,6 +24,7 @@ namespace PhoneApp1
     {
         private string ip = "http://localhost:64535/";
         private static Models.Usuario u;
+
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -156,13 +157,16 @@ namespace PhoneApp1
                 List<Models.Grupo> lf = new List<Models.Grupo>();
                 foreach (Models.GrupoUsuario k in obj1)
                     foreach (Models.Grupo x in obj)
-                        if (x.Id == k.IdGrupo && k.IdUsuario == u.Id)
+                    {
+                        if (x.Id == k.IdGrupo && (k.IdUsuario == u.Id || x.IdAdm == u.Id))
                         {
                             x.Usr = obj2.Find(w => w.Id == x.IdAdm);
                             lf.Add(x);
                         }
+                    }
                 ListGrupos.ItemsSource = lf;
                 ListSelectGPEdit.ItemsSource = lf;
+                ListGPSend.ItemsSource = lf;
             }
         }
 
@@ -352,6 +356,100 @@ namespace PhoneApp1
             await httpClient.DeleteAsync("/api/Usuario/" + obj.Id.ToString());
             MessageBox.Show("Deletado com sucesso!");
             ExibiGrupos();
+        }
+
+        private void TextBlock_DoubleTap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+
+        }
+
+        private async Task<List<Models.Usuario>> GetUsersGP(Models.Grupo grupo)
+        {
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(ip);
+            var response = await httpClient.GetAsync("/api/GrupoUsuario/");
+            var str = response.Content.ReadAsStringAsync().Result;
+            List<Models.GrupoUsuario> obj = JsonConvert.DeserializeObject<List<Models.GrupoUsuario>>(str);
+
+            var response1 = await httpClient.GetAsync("/api/Usuario/");
+            var str1 = response1.Content.ReadAsStringAsync().Result;
+            List<Models.Usuario> obj1 = JsonConvert.DeserializeObject<List<Models.Usuario>>(str1);
+
+
+            List<Models.Usuario> listU = new List<Models.Usuario>();
+            foreach (Models.GrupoUsuario gp in obj)
+                foreach (Models.Usuario user in obj1)
+                    if (gp.IdGrupo == grupo.Id && gp.IdUsuario == user.Id) listU.Add(user);
+
+            return listU;
+        }
+
+        private async void btnEnviarMsgGP_Click(object sender, RoutedEventArgs e)
+        {
+            // Envia a mensagem diretamente para o Microsoft Push Notification Service
+            if (ListGPSend.SelectedIndex == -1)
+            {
+                MessageBox.Show("Grupo não selecionado");
+                return;
+            }
+            try
+            {
+                List<Models.Usuario> lvUsers = await GetUsersGP(ListGPSend.SelectedItem as Models.Grupo);
+                foreach (Models.Usuario l in lvUsers)
+                {
+                    string name = u.Nome;
+                    // Mensagem: toast notification
+                    string msg =
+                    "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
+                    "<wp:Notification xmlns:wp=\"WPNotification\">" +
+                        "<wp:Toast>" +
+                            "<wp:Text1>" + name + "</wp:Text1>" +
+                            "<wp:Text2>" + txtMsg.Text + "</wp:Text2>" +
+                            "<wp:Param>/MsgPage.xaml?Msg1="
+                                + name + "&amp;Msg2=" + txtMsg.Text + "</wp:Param>" +
+                        "</wp:Toast>" +
+                    "</wp:Notification>";
+
+                    // Codifica a mensagem a ser enviada
+                    byte[] msgBytes = Encoding.UTF8.GetBytes(msg);
+
+                    // Cria a requisição web com a notificação para a o usuário selecionado
+                    string uri = l.Uri;
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+                    request.Method = "Post";
+                    request.ContentType = "text/xml";
+                    request.ContentLength = msg.Length;
+                    request.Headers["X-MessageID"] = Guid.NewGuid().ToString();
+                    request.Headers["X-WindowsPhone-Target"] = "toast";
+                    request.Headers["X-NotificationClass"] = "2";
+
+                    // Envia a requisição web 
+                    using (Stream requestStream = await request.GetRequestStreamAsync())
+                    {
+                        requestStream.Write(msgBytes, 0, msgBytes.Length);
+                    }
+
+                    // Envia a mensagem para o serviço de usuários
+                    // O serviço de usuários envia para o Microsoft Push Notification Service
+                    HttpClient httpClient = new HttpClient();
+                    httpClient.BaseAddress = new Uri(ip);
+
+                    Models.Mensagem m = new Models.Mensagem
+                    {
+                        Uri = l.Uri,
+                        Texto1 = name,
+                        Texto2 = txtMsg.Text,
+                        Param = "Notification.xaml"
+                    };
+                    string s = "=" + JsonConvert.SerializeObject(m);
+                    var content = new StringContent(s, Encoding.UTF8, "application/x-www-form-urlencoded");
+                    await httpClient.PostAsync("/api/Mensagem", content);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }
