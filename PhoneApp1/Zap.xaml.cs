@@ -135,6 +135,7 @@ namespace PhoneApp1
                 ListContatos.ItemsSource = lf;
                 ListSelectUsers.ItemsSource = lf;
                 ListUsersSend.ItemsSource = lf;
+                ListSelectUsersEdit.ItemsSource = lf;
             }
         }
 
@@ -155,13 +156,20 @@ namespace PhoneApp1
                 List<Models.GrupoUsuario> obj1 = JsonConvert.DeserializeObject<List<Models.GrupoUsuario>>(str1);
                 List<Models.Usuario> obj2 = JsonConvert.DeserializeObject<List<Models.Usuario>>(str2);
                 List<Models.Grupo> lf = new List<Models.Grupo>();
-                foreach (Models.GrupoUsuario k in obj1)
-                    foreach (Models.Grupo x in obj)
+                foreach (Models.Grupo x in obj)
+                    foreach (Models.GrupoUsuario k in obj1)
                     {
-                        if (x.Id == k.IdGrupo && (k.IdUsuario == u.Id || x.IdAdm == u.Id))
+                        if (k.IdUsuario == u.Id)
                         {
                             x.Usr = obj2.Find(w => w.Id == x.IdAdm);
                             lf.Add(x);
+                            break;
+                        }
+                        else if (x.IdAdm == u.Id)
+                        {
+                            x.Usr = obj2.Find(w => w.Id == x.IdAdm);
+                            lf.Add(x);
+                            break;
                         }
                     }
                 ListGrupos.ItemsSource = lf;
@@ -338,12 +346,12 @@ namespace PhoneApp1
             httpClient.BaseAddress = new Uri(ip);
             Models.Grupo f = new Models.Grupo
             {
-                Descricao = txtNomeEdit.Text,
-                IdAdm = obj.IdAdm
+                Descricao = txtDescEdit.Text,
+                IdAdm = obj.IdAdm,            
             };
             string s = "=" + JsonConvert.SerializeObject(f);
             var content = new StringContent(s, Encoding.UTF8, "application/x-www-form-urlencoded");
-            await httpClient.PutAsync("/api/Grupo/" + f.Id, content);
+            await httpClient.PutAsync("/api/Grupo/" + obj.Id, content);
             MessageBox.Show("Atualizado com sucesso!");
             ExibiGrupos();
         }
@@ -353,14 +361,9 @@ namespace PhoneApp1
             Models.Grupo obj = (Models.Grupo)ListSelectGPEdit.SelectedItem;
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(ip);
-            await httpClient.DeleteAsync("/api/Usuario/" + obj.Id.ToString());
+            await httpClient.DeleteAsync("/api/Grupo/" + obj.Id.ToString());
             MessageBox.Show("Deletado com sucesso!");
             ExibiGrupos();
-        }
-
-        private void TextBlock_DoubleTap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-
         }
 
         private async Task<List<Models.Usuario>> GetUsersGP(Models.Grupo grupo)

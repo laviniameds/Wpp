@@ -29,8 +29,7 @@
                             <DataTemplate>
                                 <StackPanel>
                                     <Image Source="{Binding Photo}"/>
-                                    <TextBlock FontSize="30" Text="{Binding Nome}" >
-                                    </TextBlock>
+                                    <TextBlock FontSize="30" Text="{Binding Nome}" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -44,7 +43,7 @@
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
-                                    <TextBlock FontSize="30" Text="{Binding Descricao}" FontWeight="Bold" DoubleTap="TextBlock_DoubleTap" />
+                                    <TextBlock FontSize="30" Text="{Binding Descricao}" FontWeight="Bold" />
                                     <TextBlock FontSize="20" Text="{Binding Usr.Nome}" FontFamily="Portable User Interface"/>
                                 </StackPanel>
                             </DataTemplate>
@@ -139,8 +138,7 @@
                             <DataTemplate>
                                 <StackPanel>
                                     <Image Source="{Binding Photo}"/>
-                                    <TextBlock FontSize="30" Text="{Binding Nome}" >
-                                    </TextBlock>
+                                    <TextBlock FontSize="30" Text="{Binding Nome}" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -154,15 +152,16 @@
 
             <phone:PivotItem  Header="Editar Grupo" Margin="14,0,10,0">
                 <Grid>
-                    <phone:LongListSelector x:Name="ListSelectGPEdit" Margin="0,110,0,94">
-                        <phone:LongListSelector.ItemTemplate>
+                    <ListBox x:Name="ListSelectGPEdit" Margin="0,110,0,94">
+                        <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
-                                    <Image Source="{Binding Descricao}"/>
+                                    <TextBlock FontSize="30" Text="{Binding Descricao}" FontWeight="Bold" />
+                                    <TextBlock FontSize="20" Text="{Binding Usr.Nome}" FontFamily="Portable User Interface"/>
                                 </StackPanel>
                             </DataTemplate>
-                        </phone:LongListSelector.ItemTemplate>
-                    </phone:LongListSelector>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                     <TextBox x:Name="txtDescEdit" HorizontalAlignment="Left" Margin="0,33,0,0" TextWrapping="Wrap" Text="Descrição" VerticalAlignment="Top" Width="446"/>
                     <Button x:Name="btnEditGP" Content="Editar" HorizontalAlignment="Left" Margin="10,542,0,0" VerticalAlignment="Top" Width="216" Click="btnEditGP_Click"/>
                     <Button x:Name="btnDelGP" Content="Deletar" HorizontalAlignment="Left" Margin="223,543,0,0" VerticalAlignment="Top" Width="216" Click="btnDelGP_Click"/>
